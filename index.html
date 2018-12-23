@@ -10,37 +10,30 @@
 </head>
 
 <body>
+    <!-- <header>
 
-    <div class="header-block">
-        <header>
-
-        </header>
+        </header> -->
+    <header>
         <div class="heading">
-            <span class="heading-main">Aspect Fitness</span>
-            <span class="heading-sub">Testing The Limits</span>
+            <p class="heading-main">Aspect Fitness</p>
+            <p class="heading-sub">Testing The Limits</p>
         </div>
-
-        <div class="slide-container">
-            <!-- <div class="slide-overlay"></div> -->
-            <div class="slideshow">
-                <img class="slideshow-img" src="https://images.pexels.com/photos/1587648/pexels-photo-1587648.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
-                <img class="slideshow-img" src="https://images.pexels.com/photos/497934/pexels-photo-497934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
-                <img class="slideshow-img" src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
-                <img class="slideshow-img" src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
-                <img class="slideshow-img" src="https://images.pexels.com/photos/1111304/pexels-photo-1111304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
-            </div>
+        <div class="slideshow">
+            <img class="slideshow-img" src="static/images/slide1.jpeg" alt="">
+            <img class="slideshow-img" src="static/images/slide2.jpeg" alt="">
+            <img class="slideshow-img" src="static/images/slide3.jpeg" alt="">
+            <img class="slideshow-img" src="static/images/slide4.jpeg" alt="">
+            <img class="slideshow-img" src="static/images/slide5.jpeg" alt="">
         </div>
+        <img id="nav-btn" src="static/btns/hamburgerbtn.png" alt="">
+        <img class="placeholder-img" src="static/images/bg-img.jpg" alt="placeholderimage">
+    </header>
 
-    </div>
 
-    <div class=""">
-            <h2 class=" intro-heading">Train Together, Push The Limits and Break That Mental
-        Barrier</h2>
+    <section>
+    <div class="">
+        <h2 class=" intro-heading">Train Together, Push The Limits and Break That Mental
+            Barrier</h2>
     </div>
     <div class="grid-container">
 
@@ -53,6 +46,10 @@
                 elit. Quas beatae ex voluptates quos voluptatem necessitatibus laudantium quis recusandae, repudiandae
                 labore
                 unde voluptatum obcaecati quia ipsam aliquid harum error et facilis.
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorem sit itaque consequuntur eius
+                veniam voluptates quo doloremque repudiandae, maiores dignissimos nam cum tempora blanditiis accusamus
+                adipisci debitis eum beatae.
             </p>
 
             <h4 class="small-heading"></h4>
@@ -74,18 +71,21 @@
             </div>
         </div>
 
-    </div>
 
-<hr>
+
+    </div>
+    </section>
+
+    <hr>
     <div class="programs">
 
-        <div class="program-radiobtns">
-            <input type="radio" name="filter" id="all" checked>
-            <input type="radio" name="filter" id="posture">
-            <input type="radio" name="filter" id="fatloss">
-            <input type="radio" name="filter" id="musclegain">
-            <input type="radio" name="filter" id="fitness">
-        </div>
+
+        <input type="radio" name="filter" id="all" checked>
+        <input type="radio" name="filter" id="posture">
+        <input type="radio" name="filter" id="fatloss">
+        <input type="radio" name="filter" id="musclegain">
+        <input type="radio" name="filter" id="fitness">
+
 
         <div class="program-types">
             <label class="all" for="all">All</label>
@@ -96,21 +96,99 @@
         </div>
 
         <div class="program-list">
-            <div class="program card-posture">Yoga and Dance <br> <br> #Posture</div>
-            <div class="program card-fatloss card-fitness">Body hit and Light Lifting <br> <br> #Fatloss <br> #Fitness </div>
-            <div class="program card-posture card-fitness">Pilates and Spin <br> <br> #Posture <br> #FatLoss </div>
-            <div class="program card-fatloss">Bike and Run <br> <br> #FatLoss</div>
-            <div class="program card-musclegain">Power Lifting <br> <br> #Musclegain </div>
-            <div class="program card-fatloss card-fitness">Running and Jumping <br> <br> #FatLoss <br> #Fitness  </div>
-            <div class="program card-musclegain">Bench and Dumbells <br> <br> #MuscleGain </div>
-            <div class="program card-musclegain card-fatloss card-fitness">Running and Weighted Swats <br> <br> #MuscleGain <br> #FatLoss <br> #Fitness </div>
+            <div class="program card-posture">
+                <h3>Yoga and Dance</h3>
+                <h5>#Posture</h5>
+            </div>
+
+            <div class="program card-fatloss-fitness">
+                <h3>Body hit and Light Lifting</h3>
+                <h5>#Fatloss</h5>
+                <h5>#Fitness</h5>
+            </div>
+
+            <div class="program card-fatloss-posture">
+                <h3>Pilates and Spin</h3>
+                <h5>#Posture</h5>
+                <h5>#FatLoss</h5>
+            </div>
+
+            <div class="program card-fatloss">
+                <h3>Bike and Run </h3>
+                <h5>#FatLoss</h5>
+            </div>
+
+            <div class="program card-musclegain">
+                <h3>Power Lifting</h3>
+                <h5>#Musclegain</h5>
+            </div>
+
+            <div class="program card-fatloss-fitness">
+                <h3>Running and Jumping </h3>
+                <h5>#FatLoss</h5>
+                <h5>#Fitness</h5>
+            </div>
+
+            <div class="program card-musclegain">
+                <h3>Bench and Dumbells </h3>
+                <h5>#MuscleGain</h5>
+            </div>
+
+            <div class="program card-fatloss-fitness-musclegain">
+                <h3>Running and Swats</h3>
+                <h5>#MuscleGain</h5>
+                <h5>#FatLoss</h5>
+                <h5>#Fitness</h5>
+            </div>
+
+
+            <!-- 
+.card-fitness-musclegain-posture
+.card-fatloss-musclegain-posture
+.card-fatloss-fitness-musclegain
+.card-fatloss-fitness-posture
+.card-fitness-posture
+.card-fitness-musclegain
+.card-fatloss-fitness
+.card-fatloss-musclegain
+.card-fatloss-posture
+.card-musclegain-posture
+.card-fatloss
+.card-fitness
+.card-musclegain
+.card-posture
+-->
 
         </div>
     </div>
+    <br><br><br><br><br><br><br>
 
+    <div id="footer">
 
+        <div class="footer-nav">
+            <a href=""><span>About</span></a>
+            <a href=""><span>Services</span></a>
+            <a href=""><span>The Team</span></a>
+            <a href=""><span>Blog</span></a>
+            <a href=""><span>Location</span></a>
+        </div>
 
-<br><br><br><br><br><br><br>
+        <div id="social-icon-group">
+            <a href=""><img class="social-logo" src="static/Logos/Facebook Logo.png" alt="Facebook logo"></a>
+            <a href=""><img class="social-logo" src="static/Logos/Instagram Logo.png" alt="Instagram Logo"></a>
+            <a href=""><img class="social-logo" src="static/Logos/Twitter Logo.png" alt="Twitter Logo"></a>
+
+        </div>
+
+        <p>1235 James Street, London, W1CD 2EF, UK</p>
+        <p>020 811 1111</p>
+        <a href="" class="email">enquires@aspectfitness.com</a>
+
+    </div>
+    <div id="sub-footer">
+        <p>© Aspect Fitness 2019. All Rights Resevered.</p>
+    </div>
+
 </body>
 
 </html>
