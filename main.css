@@ -1,0 +1,689 @@
+
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* keep the width mobile friendly no side scrolling  */
+body {
+    width: 100%;
+    overflow-x: hidden;
+    color: grey;
+    font-size: 1.5vw;
+    line-height: 1.5;
+    font-family: Calibri, sans-serif;
+    max-width: 1300px;
+    min-width: 320px;
+    margin: 0 auto;
+    border: solid 1px grey;
+}
+
+@media only screen and (min-width:1600px) {
+ body{
+     font-size: 27px;
+ }
+}
+
+a{
+    text-decoration: none;
+
+}
+
+/* =======  Hero Header  =======  */
+
+
+header{
+    position: relative;
+    overflow-y: hidden;
+}
+
+.heading {
+    position: absolute;
+    z-index: 100;
+    color: white;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%)
+    
+}
+.heading-main {
+
+    letter-spacing: 0.2em;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.heading-main:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    cursor: default;
+}
+
+.heading-sub {
+    font-size: 4vw;
+    text-align: center;
+}
+
+.heading-sub:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    cursor: default;
+}
+
+.slideshow {
+    position: absolute;
+    width: 500%;
+    overflow: hidden;
+    -webkit-animation: slider 30s infinite;
+    animation: slider 30s infinite;
+    -webkit-transition: 20s;
+    transition: 20s;
+    z-index: 1;
+}
+
+.slideshow-img {
+    width: 20%;
+    float: left;
+    background-size: contain;
+    clip-path: polygon(1% 0, 47% 100%, 100% 7%, 100% 100%, 0 45%, 100% 0, 23% 0, 0 100%, 100% 46%, 100% 38%);
+    opacity: 0.9;
+}
+.placeholder-img{
+    width: 100%;
+    z-index: 1;
+    height: 100%;  
+}
+
+#nav-btn{
+    border-radius: 50px;
+    background-color: white;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    z-index: 500;
+    width: 5vw;
+    padding: 1vw;
+}
+
+@media only screen and (min-width:1600px) {
+    .heading-main {
+        font-size: 100px;
+    }
+    .heading-sub {
+        font-size: 60px;
+    }
+    #nav-btn{
+        max-width: 85px;
+        padding: 16px;
+    }
+   }
+
+/* ======  Header Animation  ====== */
+
+@-webkit-keyframes slider {
+    from {
+        left: 0;
+    }
+
+    50% {
+        left: -400%
+    }
+
+    to {
+        left: 0%
+    }
+
+}
+
+@keyframes slider {
+    from {
+        left: 0;
+    }
+
+    50% {
+        left: -400%
+    }
+
+    to {
+        left: 0%
+    }
+
+}
+
+
+/* ===== Introduction  ===== */
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 2vw;
+    padding: 2.5em;
+    width: 100%;
+}
+
+.grid-item {}
+
+.col-2 {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.intro-heading {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.small-heading {
+    margin-bottom: 1em;
+}
+
+
+
+.intro-img-group {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.intro-img-group * {
+
+    width: 150px;
+    -webkit-box-shadow: 2px 3px grey;
+    box-shadow: 2px 3px grey;
+    grid-column: span 4;
+}
+
+.intro-img1 {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 2;
+}
+
+.intro-img2 {
+    grid-column: 3 / span 3;
+    grid-row: 3 / span 2;
+}
+
+.intro-img3 {
+    grid-column: 5 / span 3;
+    grid-row: 2 / span 2;
+}
+
+
+
+@media (max-width:990px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width:700px){
+    .intro-img-group * {
+        width: 150px;
+    }
+}
+
+
+
+
+/* =====  Interactive Program Filter ===== */
+
+.program-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.program {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 20px 20px;
+    vertical-align: top;
+    border: solid 2px black;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgb(26, 132, 184);
+    color: white;
+    overflow: hidden;
+}
+
+.program-types {
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.program-types label {
+    display: inline-block;
+    margin: 5px 0px;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+
+
+@media (max-width: 675px) {
+    .program-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 430px) {
+    .program-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==== Fatloss Buttons ==== */
+
+input#fatloss:checked~.program-list .card-fitness-musclegain-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fatloss:checked~.program-list .card-musclegain-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fatloss:checked~.program-list .card-fitness-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fatloss:checked~.program-list .card-fitness-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fatloss:checked~.program-list .card-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+
+}
+
+input#fatloss:checked~.program-list .card-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+
+}
+
+input#fatloss:checked~.program-list .card-fitness {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+/* ==== Fitness Buttons ==== */
+
+input#fitness:checked~.program-list .card-fatloss-musclegain-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fitness:checked~.program-list .card-musclegain-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fitness:checked~.program-list .card-fatloss-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fitness:checked~.program-list .card-fatloss-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fitness:checked~.program-list .card-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fitness:checked~.program-list .card-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#fitness:checked~.program-list .card-fatloss {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+/* ======= Muscle Gain Buttons ======== */
+
+input#musclegain:checked~.program-list .card-fatloss-fitness-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#musclegain:checked~.program-list .card-fatloss-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#musclegain:checked~.program-list .card-fatloss-fitness {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#musclegain:checked~.program-list .card-fitness-posture{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#musclegain:checked~.program-list .card-posture {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#musclegain:checked~.program-list .card-fitness {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#musclegain:checked~.program-list .card-fatloss{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+
+/* ======= Posture Buttons ======== */
+
+input#posture:checked~.program-list .card-fatloss-fitness-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#posture:checked~.program-list .card-fatloss-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#posture:checked~.program-list .card-fatloss-fitness {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#posture:checked~.program-list .card-fitness-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#posture:checked~.program-list .card-musclegain {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#posture:checked~.program-list .card-fitness {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+input#posture:checked~.program-list .card-fatloss {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+    border: 0px;
+    transition: all ease-in-out 1s;
+}
+
+
+/* ===========    animations     ============== */
+
+
+/* ===========    Footer    ============== */
+
+#footer{
+    padding: 11vh 0 4vh;
+    background-color: rgb(26, 132, 184);
+    background: linear-gradient(rgb(26, 132, 184), #9198e5);
+    color:white;
+    text-align: center;
+    -webkit-clip-path: polygon(0 14%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 14%, 100% 0, 100% 100%, 0% 100%);
+
+}
+
+#footer .footer-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0px;
+}
+
+#footer .footer-nav a{
+    padding: 10px 20px;
+    margin: 10px 15px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border: white solid 1px;
+    box-shadow: 1px 1px;
+    border-radius: 3px;
+    
+
+}
+#footer .footer-nav a:hover{
+    position: relative;
+    top: -1.5px;
+    transition: all ease-in-out 0.8s;
+    color: lightblue;
+    /* text-decoration: underline; */
+}
+
+#footer #social-icon-group{
+    padding: 10px;
+}
+
+#footer .social-logo{
+    margin: 0 15px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    background: lightblue;
+    padding: 8px;
+    opacity: 0.9;
+}
+#footer .social-logo:hover{
+    background:rgb(86, 86, 185);
+}
+
+#footer p{
+    font-weight: 100;
+    color: lightgrey;
+}
+#footer .email{
+    color: white;
+    text-decoration: underline;
+
+}
+
+#footer .email:hover{
+    color: lightblue;
+
+}
+
+#sub-footer{
+    background-color: #9198e5;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
