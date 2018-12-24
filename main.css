@@ -1,5 +1,3 @@
-
-
 /* CSS Reset */
 * {
     margin: 0;
@@ -23,12 +21,12 @@ body {
 }
 
 @media only screen and (min-width:1600px) {
- body{
-     font-size: 27px;
- }
+    body {
+        font-size: 27px;
+    }
 }
 
-a{
+a {
     text-decoration: none;
 
 }
@@ -36,7 +34,7 @@ a{
 /* =======  Hero Header  =======  */
 
 
-header{
+header {
     position: relative;
     overflow-y: hidden;
 }
@@ -48,8 +46,8 @@ header{
     width: 100%;
     top: 50%;
     transform: translateY(-50%)
-    
 }
+
 .heading-main {
 
     letter-spacing: 0.2em;
@@ -93,16 +91,18 @@ header{
     width: 20%;
     float: left;
     background-size: contain;
+    -webkit-clip-path: polygon(1% 0, 47% 100%, 100% 7%, 100% 100%, 0 45%, 100% 0, 23% 0, 0 100%, 100% 46%, 100% 38%);
     clip-path: polygon(1% 0, 47% 100%, 100% 7%, 100% 100%, 0 45%, 100% 0, 23% 0, 0 100%, 100% 46%, 100% 38%);
     opacity: 0.9;
 }
-.placeholder-img{
+
+.placeholder-img {
     width: 100%;
     z-index: 1;
-    height: 100%;  
+    height: 100%;
 }
 
-#nav-btn{
+#nav-btn {
     border-radius: 50px;
     background-color: white;
     position: absolute;
@@ -117,14 +117,16 @@ header{
     .heading-main {
         font-size: 100px;
     }
+
     .heading-sub {
         font-size: 60px;
     }
-    #nav-btn{
+
+    #nav-btn {
         max-width: 85px;
         padding: 16px;
     }
-   }
+}
 
 /* ======  Header Animation  ====== */
 
@@ -226,7 +228,7 @@ header{
     }
 }
 
-@media only screen and (max-width:700px){
+@media only screen and (max-width:700px) {
     .intro-img-group * {
         width: 150px;
     }
@@ -480,7 +482,7 @@ input#musclegain:checked~.program-list .card-fatloss-fitness {
     transition: all ease-in-out 1s;
 }
 
-input#musclegain:checked~.program-list .card-fitness-posture{
+input#musclegain:checked~.program-list .card-fitness-posture {
     width: 0;
     height: 0;
     padding: 0;
@@ -513,7 +515,7 @@ input#musclegain:checked~.program-list .card-fitness {
     transition: all ease-in-out 1s;
 }
 
-input#musclegain:checked~.program-list .card-fatloss{
+input#musclegain:checked~.program-list .card-fatloss {
     width: 0;
     height: 0;
     padding: 0;
@@ -610,25 +612,25 @@ input#posture:checked~.program-list .card-fatloss {
 
 /* ===========    Footer    ============== */
 
-#footer{
+#footer {
     padding: 11vh 0 4vh;
     background-color: rgb(26, 132, 184);
     background: linear-gradient(rgb(26, 132, 184), #9198e5);
-    color:white;
+    color: white;
     text-align: center;
     -webkit-clip-path: polygon(0 14%, 100% 0, 100% 100%, 0% 100%);
     clip-path: polygon(0 14%, 100% 0, 100% 100%, 0% 100%);
 
 }
 
-#footer .footer-nav{
+#footer .footer-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 15px 0px;
 }
 
-#footer .footer-nav a{
+#footer .footer-nav a {
     padding: 10px 20px;
     margin: 10px 15px;
     font-weight: bold;
@@ -637,10 +639,11 @@ input#posture:checked~.program-list .card-fatloss {
     border: white solid 1px;
     box-shadow: 1px 1px;
     border-radius: 3px;
-    
+
 
 }
-#footer .footer-nav a:hover{
+
+#footer .footer-nav a:hover {
     position: relative;
     top: -1.5px;
     transition: all ease-in-out 0.8s;
@@ -648,11 +651,11 @@ input#posture:checked~.program-list .card-fatloss {
     /* text-decoration: underline; */
 }
 
-#footer #social-icon-group{
+#footer #social-icon-group {
     padding: 10px;
 }
 
-#footer .social-logo{
+#footer .social-logo {
     margin: 0 15px;
     height: 40px;
     width: 40px;
@@ -661,26 +664,28 @@ input#posture:checked~.program-list .card-fatloss {
     padding: 8px;
     opacity: 0.9;
 }
-#footer .social-logo:hover{
-    background:rgb(86, 86, 185);
+
+#footer .social-logo:hover {
+    background: rgb(86, 86, 185);
 }
 
-#footer p{
+#footer p {
     font-weight: 100;
     color: lightgrey;
 }
-#footer .email{
+
+#footer .email {
     color: white;
     text-decoration: underline;
 
 }
 
-#footer .email:hover{
+#footer .email:hover {
     color: lightblue;
 
 }
 
-#sub-footer{
+#sub-footer {
     background-color: #9198e5;
     width: 100%;
     text-align: center;
