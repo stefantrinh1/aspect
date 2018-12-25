@@ -4,6 +4,10 @@
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-font-variant-ligatures: no-common-ligatures;
+            font-variant-ligatures: no-common-ligatures;
+    -webkit-font-feature-settings: "liga"0, "clig"0;
+    font-feature-settings: "liga"0, "clig"0;
 }
 
 /* keep the width mobile friendly no side scrolling  */
@@ -11,7 +15,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     color: grey;
-    font-size: 1.5vw;
+    font-size: 16px;
     line-height: 1.5;
     font-family: Calibri, sans-serif;
     max-width: 1300px;
@@ -31,6 +35,12 @@ a {
 
 }
 
+input {
+    position: absolute;
+    z-index: 10000;
+    display: none;
+}
+
 /* =======  Hero Header  =======  */
 
 
@@ -45,7 +55,8 @@ header {
     color: white;
     width: 100%;
     top: 50%;
-    transform: translateY(-50%)
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%)
 }
 
 .heading-main {
@@ -105,12 +116,12 @@ header {
 #nav-btn {
     border-radius: 50px;
     background-color: white;
-    position: absolute;
-    top: 5%;
-    left: 90%;
     z-index: 500;
     width: 5vw;
     padding: 1vw;
+    position: absolute;
+    left: 93%;
+    top: 15px;
 }
 
 @media only screen and (min-width:1600px) {
@@ -160,28 +171,114 @@ header {
 
 }
 
+/* ===== Navigation  ===== */
+
+nav {
+    max-width: 1600px;
+    position: relative;
+}
+
+#nav-overlay {
+
+    z-index: 400;
+    background-color: rgb(26, 132, 184);
+    width: 0;
+    height: 0;
+    position: fixed;
+    max-width: 1300px !important;
+    min-width: 320px;
+    opacity: 1;
+    background: -webkit-gradient(linear, right bottom, left top, from(rgba(0, 146, 219, 0.938)), to(rgba(177, 20, 177, 0.938)));
+    background: linear-gradient(to top left, rgba(0, 146, 219, 0.938), rgba(177, 20, 177, 0.938));
+    -webkit-transition: all ease-in-out 1s;
+    transition: all ease-in-out 1s;
+
+}
+
+#nav-overlay ul {
+    list-style-type: none;
+    position: absolute;
+    text-align: center;
+    top: -50%;
+    left: -50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transition: ease-in-out 0.7s;
+    transition: ease-in-out 0.7s;
+}
+
+#nav-overlay a {
+    margin: 5px auto;
+    color: white;
+    letter-spacing: 6px;
+    padding: 8px;
+    font-size: 2.4vw;
+}
+
+#nav-overlay li:hover {
+    border-bottom: solid white 1px;
+    -webkit-transition: ease-in-out 0.5s;
+    transition: ease-in-out 0.5s;
+}
+
+
+input#nav-menu:checked~nav div {
+    height: 100vh;
+    width: 100vw;
+}
+
+input#nav-menu:checked~nav div ul {
+    top: 50%;
+    left: 50%;
+
+}
+
+@media only screen and (max-width:700px) {
+    #nav-overlay li {
+        font-size: 25px;
+    }
+}
+
+
 
 /* ===== Introduction  ===== */
 
+#introduction {
+    background-image: url("https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 
-.grid-container {
+}
+
+.introduction-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
     gap: 2vw;
-    padding: 2.5em;
+    padding: 2vw;
     width: 100%;
 }
 
-.grid-item {}
+@media only screen and (max-width:500px) {
+    .introduction-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+}
+
+.introduction-text {
+    color: black;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
 
 .col-2 {
     grid-column: span 2;
-    text-align: center;
-}
-
-.intro-heading {
-    margin: 1em 0;
     text-align: center;
 }
 
@@ -189,74 +286,145 @@ header {
     margin-bottom: 1em;
 }
 
+.introduction-text .link-btn {
 
+    padding: 1vw;
+    margin: 1vw 0px;
+    background-color: pink;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5vw;
+}
+
+/* ====  Intro Carousel  ==== */
+
+.intro-carousel {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#carousel-placeholder {
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 200px;
+    opacity: 0;
+
+
+}
 
 .intro-img-group {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 30px;
+    top: 0;
+    left: 0;
 }
 
-.intro-img-group * {
-
-    width: 150px;
-    -webkit-box-shadow: 2px 3px grey;
-    box-shadow: 2px 3px grey;
-    grid-column: span 4;
+.intro-img-group .intro-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* display: inline-block; */
+    opacity: 0;
+    -webkit-animation: slideshow-fade 15s infinite;
+    animation: slideshow-fade 15s infinite;
+    z-index: 350;
+    overflow: hidden;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
-.intro-img1 {
-    grid-column: 2 / span 3;
-    grid-row: 1 / span 2;
+.intro-img-group .intro-img:nth-child(2) {
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
 }
 
-.intro-img2 {
-    grid-column: 3 / span 3;
-    grid-row: 3 / span 2;
+.intro-img-group .intro-img:nth-child(3) {
+    -webkit-animation-delay: 10s;
+    animation-delay: 10s;
 }
 
-.intro-img3 {
-    grid-column: 5 / span 3;
-    grid-row: 2 / span 2;
-}
+/* Animation changing opacity */
+@-webkit-keyframes slideshow-fade {
+    from {
+        opacity: 0;
+    }
 
+    10% {
+        opacity: 1;
+    }
 
+    15% {
+        opacity: 1;
+    }
 
-@media (max-width:990px) {
-    .grid-container {
-        grid-template-columns: 1fr;
+    50% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
     }
 }
 
-@media only screen and (max-width:700px) {
-    .intro-img-group * {
-        width: 150px;
+@keyframes slideshow-fade {
+    from {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
     }
 }
-
 
 
 
 /* =====  Interactive Program Filter ===== */
 
 .program-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .program {
     position: relative;
     height: 200px;
     width: 200px;
-    margin: 20px 20px;
+    margin: 10px 10px;
     vertical-align: top;
-    border: solid 2px black;
     text-align: center;
-    text-transform: uppercase;
-    background: rgb(26, 132, 184);
+    /* background: rgb(26, 132, 184); */
     color: white;
-    overflow: hidden;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transition: all 0.8s ease;
+            transition: all 0.8s ease;
+
 }
 
 .program-types {
@@ -269,11 +437,16 @@ header {
     margin: 5px 0px;
     padding: 15px;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 3px;
+    cursor: pointer;
 }
 
-
+.program-icon {
+    background-color: lightpink;
+    border-radius: 50px;
+    width: 50px;
+}
 
 @media (max-width: 675px) {
     .program-list {
@@ -287,6 +460,105 @@ header {
     }
 }
 
+
+/* ======    program-card flip    ===== */
+
+
+.program:hover {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+
+}
+
+.front-card {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+
+}
+
+.front-card {
+    z-index:10000;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.front-card *{
+background-color: lightpink;
+opacity: 0.9;
+color: white;
+width: 100%;
+font-size: 17px;
+}
+
+
+.back-card {
+    top: 0;
+    left: 0;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    background-color: lightpink;
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+            border-radius: 30px;
+}
+
+.back-card-text{
+    z-index:10000;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    backface-visibility: hidden;
+    font-size: 22px;
+}
+
+/* ==== cards-backgrounds ==== */
+/* create your classes for each card background here */
+.cardbg{
+    background-size:cover !important;
+    height:100%;
+    border-radius: 30px;
+}
+
+.cardbg-1{
+    background: url("https://images.pexels.com/photos/317155/pexels-photo-317155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+.cardbg-2{
+    background: url("https://images.pexels.com/photos/864990/pexels-photo-864990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+.cardbg-3{
+    background: url("https://images.pexels.com/photos/866021/pexels-photo-866021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+.cardbg-4{
+    background: url("https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+.cardbg-5{
+    background: url("https://images.pexels.com/photos/17840/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+.cardbg-6{
+    background: url("https://images.pexels.com/photos/1571938/pexels-photo-1571938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+.cardbg-7{
+    background: url("https://images.pexels.com/photos/1554824/pexels-photo-1554824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+.cardbg-8{
+    background: url("https://images.pexels.com/photos/1552250/pexels-photo-1552250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+}
+
+
 /* ==== Fatloss Buttons ==== */
 
 input#fatloss:checked~.program-list .card-fitness-musclegain-posture {
@@ -297,6 +569,7 @@ input#fatloss:checked~.program-list .card-fitness-musclegain-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -308,6 +581,7 @@ input#fatloss:checked~.program-list .card-musclegain-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -319,6 +593,7 @@ input#fatloss:checked~.program-list .card-fitness-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -330,6 +605,7 @@ input#fatloss:checked~.program-list .card-fitness-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -341,6 +617,7 @@ input#fatloss:checked~.program-list .card-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 
 }
@@ -353,6 +630,7 @@ input#fatloss:checked~.program-list .card-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 
 }
@@ -365,6 +643,7 @@ input#fatloss:checked~.program-list .card-fitness {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -378,6 +657,7 @@ input#fitness:checked~.program-list .card-fatloss-musclegain-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -389,6 +669,7 @@ input#fitness:checked~.program-list .card-musclegain-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -400,6 +681,7 @@ input#fitness:checked~.program-list .card-fatloss-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -411,6 +693,7 @@ input#fitness:checked~.program-list .card-fatloss-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -422,6 +705,7 @@ input#fitness:checked~.program-list .card-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -433,6 +717,7 @@ input#fitness:checked~.program-list .card-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -444,6 +729,7 @@ input#fitness:checked~.program-list .card-fatloss {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -457,6 +743,7 @@ input#musclegain:checked~.program-list .card-fatloss-fitness-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -468,6 +755,7 @@ input#musclegain:checked~.program-list .card-fatloss-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -479,6 +767,7 @@ input#musclegain:checked~.program-list .card-fatloss-fitness {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -490,6 +779,7 @@ input#musclegain:checked~.program-list .card-fitness-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -501,6 +791,7 @@ input#musclegain:checked~.program-list .card-posture {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -512,6 +803,7 @@ input#musclegain:checked~.program-list .card-fitness {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -523,6 +815,7 @@ input#musclegain:checked~.program-list .card-fatloss {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -537,6 +830,7 @@ input#posture:checked~.program-list .card-fatloss-fitness-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -548,6 +842,7 @@ input#posture:checked~.program-list .card-fatloss-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -559,6 +854,7 @@ input#posture:checked~.program-list .card-fatloss-fitness {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -570,6 +866,7 @@ input#posture:checked~.program-list .card-fitness-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -581,6 +878,7 @@ input#posture:checked~.program-list .card-musclegain {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -592,6 +890,7 @@ input#posture:checked~.program-list .card-fitness {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
 
@@ -603,11 +902,9 @@ input#posture:checked~.program-list .card-fatloss {
     opacity: 0;
     min-width: 0;
     border: 0px;
+    -webkit-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
 }
-
-
-/* ===========    animations     ============== */
 
 
 /* ===========    Footer    ============== */
@@ -615,6 +912,7 @@ input#posture:checked~.program-list .card-fatloss {
 #footer {
     padding: 11vh 0 4vh;
     background-color: rgb(26, 132, 184);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(26, 132, 184)), to(#9198e5));
     background: linear-gradient(rgb(26, 132, 184), #9198e5);
     color: white;
     text-align: center;
@@ -624,9 +922,14 @@ input#posture:checked~.program-list .card-fatloss {
 }
 
 #footer .footer-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 15px 0px;
 }
 
@@ -637,7 +940,8 @@ input#posture:checked~.program-list .card-fatloss {
     color: white;
     text-decoration: none;
     border: white solid 1px;
-    box-shadow: 1px 1px;
+    -webkit-box-shadow: 1px 1px;
+            box-shadow: 1px 1px;
     border-radius: 3px;
 
 
@@ -645,9 +949,10 @@ input#posture:checked~.program-list .card-fatloss {
 
 #footer .footer-nav a:hover {
     position: relative;
-    top: -1.5px;
-    transition: all ease-in-out 0.8s;
-    color: lightblue;
+    top: -1.75px;
+    -webkit-transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.4s;
+    color: purple;
     /* text-decoration: underline; */
 }
 

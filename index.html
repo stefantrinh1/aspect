@@ -10,9 +10,47 @@
 </head>
 
 <body>
-    <!-- <header>
+    <input type="checkbox" name="nav-menu" id="nav-menu">
+    <nav>
 
-        </header> -->
+        <label for="nav-menu"><img id="nav-btn" src="static/btns/hamburgerbtn.png" alt=""></label>
+
+        <div id="nav-overlay">
+            <ul>
+                <li>
+                    <a href="">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Introduction
+                    </a>
+                <li>
+                    <a href="">
+                        Programs
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        The Team
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Location
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
     <header>
         <div class="heading">
             <p class="heading-main">Aspect Fitness</p>
@@ -25,55 +63,48 @@
             <img class="slideshow-img" src="static/images/slide4.jpeg" alt="">
             <img class="slideshow-img" src="static/images/slide5.jpeg" alt="">
         </div>
-        <img id="nav-btn" src="static/btns/hamburgerbtn.png" alt="">
         <img class="placeholder-img" src="static/images/bg-img.jpg" alt="placeholderimage">
     </header>
 
 
-    <section>
-    <div class="">
-        <h2 class=" intro-heading">Train Together, Push The Limits and Break That Mental
-            Barrier</h2>
-    </div>
-    <div class="grid-container">
+    <section id="introduction">
 
-        <div class="grid-item">
+        <div class="introduction-grid">
 
-            <h4 class="small-heading">Welcome to Aspect Fitness</h4>
-            <p>
-                where we push you to the limit. Lorem ipsum dolor sit, amet consectetur
-                adipisicing
-                elit. Quas beatae ex voluptates quos voluptatem necessitatibus laudantium quis recusandae, repudiandae
-                labore
-                unde voluptatum obcaecati quia ipsam aliquid harum error et facilis.
+            <div class="introduction-text">
 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorem sit itaque consequuntur eius
-                veniam voluptates quo doloremque repudiandae, maiores dignissimos nam cum tempora blanditiis accusamus
-                adipisci debitis eum beatae.
-            </p>
-
-            <h4 class="small-heading"></h4>
-
-        </div>
-        <div class="grid-item">
-            <div class="intro-img-group">
-
-                <img class="intro-img1" src="static/images/intro-1.jpg" alt="">
+                <h4 class="small-heading">Train Together, Push The Limits and Break That Mental
+                    Barrier</h4>
+                <p>
+                    where we push you to the limit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
+                    beatae ex voluptates quos voluptatem necessitatibus laudantium quis recusandae,repudiandae labore
+                    unde voluptatum obcaecati quia ipsam aliquid harum error et facili. Lorem ipsum dolor sit amet
+                    consectetur
+                </p>
 
 
-                <img class="intro-img2" src="https://images.pexels.com/photos/863926/pexels-photo-863926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
-
-
-                <img class="intro-img3" src="https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
+                <div><a href=""><button class="link-btn">More Info</button></a></div>
 
             </div>
+
+            <div class="intro-carousel">
+                <img id="carousel-placeholder" src="static/images/bg-img.jpg" alt="">
+                <div class="intro-img-group">
+
+                    <img class="intro-img" src="static/images/intro-1.jpg" alt="">
+
+                    <img class="intro-img" src="https://images.pexels.com/photos/863926/pexels-photo-863926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="">
+
+                    <img class="intro-img" src="https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="">
+
+                </div>
+            </div>
+
+
+
         </div>
-
-
-
-    </div>
     </section>
 
     <hr>
@@ -88,57 +119,141 @@
 
 
         <div class="program-types">
-            <label class="all" for="all">All</label>
-            <label class="card-posture" for="posture">Posture</label>
-            <label class="card-fatloss" for="fatloss">Fat Loss</label>
-            <label class="card-musclegain" for="musclegain">Muscle Gain</label>
-            <label class="card-fitness" for="fitness">Fitness</label>
+            <label class="all" for="all">
+                <img class="program-icon" src="static/Logos/all-icon.png" alt="all-icon">
+                <p>All</p>
+            </label>
+            <label class="card-posture" for="posture">
+                <img class="program-icon" src="static/Logos/yogaicon.png" alt="all-icon">
+                <p>Posture</p>
+            </label>
+            <label class="card-fatloss" for="fatloss">
+                <img class="program-icon" src="static/Logos/fatloss-icon.png" alt="all-icon">
+                <p>Fat Loss</p>
+            </label>
+            <label class="card-musclegain" for="musclegain">
+                <img class="program-icon" src="static/Logos/musclegain-icon.png" alt="all-icon">
+                <p>Strengh</p>
+            </label>
+            <label class="card-fitness" for="fitness">
+                <img class="program-icon" src="static/Logos/fitness-icon.png" alt="all-icon">
+                <p>Fitness</p>
+            </label>
         </div>
 
         <div class="program-list">
+
             <div class="program card-posture">
-                <h3>Yoga and Dance</h3>
-                <h5>#Posture</h5>
+                <div class="front-card cardbg cardbg-1">
+
+                    <h3>Yoga and Dance</h3>
+                    <h5><i>Posture</i></h5>
+
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>60 Minutes</h5>
+                        <h5>£10 Per Session</h5>
+                    </div>
+                </div>
             </div>
 
+
             <div class="program card-fatloss-fitness">
-                <h3>Body hit and Light Lifting</h3>
-                <h5>#Fatloss</h5>
-                <h5>#Fitness</h5>
+                <div class="front-card cardbg cardbg-2">
+                    <h3>Body Lift and Hit</h3>
+                    <h5>Fat Loss and Fitness</h5>
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>40 Minutes</h5>
+                        <h5>£7 Per Session</h5>
+                    </div>
+                </div>
             </div>
 
             <div class="program card-fatloss-posture">
-                <h3>Pilates and Spin</h3>
-                <h5>#Posture</h5>
-                <h5>#FatLoss</h5>
+                <div class="front-card cardbg cardbg-3">
+                    <h3>Pilates and Spin</h3>
+                    <h5>Posture and Fat loss</h5>
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>60 Minutes</h5>
+                        <h5>£10 Per Session</h5>
+                    </div>
+                </div>
             </div>
 
             <div class="program card-fatloss">
-                <h3>Bike and Run </h3>
-                <h5>#FatLoss</h5>
+                <div class="front-card cardbg cardbg-4">
+                    <h3>Bike and Run </h3>
+                    <h5>Fat Loss</h5>
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>35 Minutes</h5>
+                        <h5>£6 Per Session</h5>
+                    </div>
+                </div>
+
             </div>
 
             <div class="program card-musclegain">
-                <h3>Power Lifting</h3>
-                <h5>#Musclegain</h5>
+                <div class="front-card cardbg cardbg-5">
+                    <h3>Power Lifting</h3>
+                    <h5>Muscle Gain</h5>
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>30 Minutes</h5>
+                        <h5>£6 Per Session</h5>
+                    </div>
+                </div>
+
             </div>
 
             <div class="program card-fatloss-fitness">
-                <h3>Running and Jumping </h3>
-                <h5>#FatLoss</h5>
-                <h5>#Fitness</h5>
+                <div class="front-card cardbg cardbg-6">
+                    <h3>Running and Jumping </h3>
+                    <h5>Fat Loss & Fitness</h5>
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>40 Minutes</h5>
+                        <h5>£5 Per Session</h5>
+                    </div>
+                </div>
+
             </div>
 
             <div class="program card-musclegain">
-                <h3>Bench and Dumbells </h3>
-                <h5>#MuscleGain</h5>
+                <div class="front-card cardbg cardbg-7">
+                    <h3>Bench and Dumbells </h3>
+                    <h5>Muscle Gain</h5>
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>30 Minutes</h5>
+                        <h5>£6 Per Session</h5>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="program card-fatloss-fitness-musclegain">
-                <h3>Running and Swats</h3>
-                <h5>#MuscleGain</h5>
-                <h5>#FatLoss</h5>
-                <h5>#Fitness</h5>
+            <div class="program card-fatloss-fitness">
+                <div class="front-card cardbg cardbg-8">
+                    <h3>Running and Squats</h3>
+                    <h5>Fatloss & Fitness</h5>
+                </div>
+                <div class="back-card">
+                    <div class="back-card-text">
+                        <h5>25 Minutes</h5>
+                        <h5>£5 Per Session</h5>
+                    </div>
+                </div>
+
+
             </div>
 
 
@@ -162,6 +277,11 @@
         </div>
     </div>
     <br><br><br><br><br><br><br>
+
+
+
+
+    <br><br><br><br><br><br>
 
     <div id="footer">
 
